@@ -20,7 +20,7 @@ class UserInfo {
 }
 
 class Logger {
-    private string $filePath;
+    protected string $filePath;
 
     public function __construct(string $filePath)
     {
