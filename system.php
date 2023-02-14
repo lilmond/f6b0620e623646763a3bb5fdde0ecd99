@@ -18,3 +18,19 @@ class UserInfo {
         return $userInfo;
     }
 }
+
+class Logger {
+    private string $filePath;
+
+    public function __construct(string $filePath)
+    {
+        $this->filePath = $filePath;
+    }
+
+    public function logText(string $logText)
+    {
+        $fileHandler = fopen($this->filePath, "a+");
+        fwrite($fileHandler, "$logText\n");
+        fclose($fileHandler);
+    }
+}
